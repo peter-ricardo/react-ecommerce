@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "Bakery",
+    "path": "#"
+  },
+  {
+    "id": "2",
+    "name": "Nuts & Seeds",
+    "path": "#"
+  },
+  {
+    "id": "3",
+    "name": "Vegetables",
+    "path": "#"
+  },
+  {
+    "id": "4",
+    "name": "Cheeses",
+    "path": "#"
+  },
+  {
+    "id": "5",
+    "name": "Sea Food",
+    "path": "#"
+  },
+  {
+    "id": "6",
+    "name": "Dairy",
+    "path": "#"
+  },
+  {
+    "id": "7",
+    "name": "Meat",
+    "path": "#"
+  },
+  {
+    "id": "8",
+    "name": "Snacks",
+    "path": "#"
+  }
+]

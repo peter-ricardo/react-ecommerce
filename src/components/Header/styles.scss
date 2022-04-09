@@ -1,0 +1,24 @@
+#menu {
+
+  grid-template-areas: "logo" "actions" "search";
+
+  @screen md {
+    grid-template-areas: "logo actions" "search search";
+  }
+
+  @screen lg {
+    grid-template-areas:  "logo logo search search search search actions";
+  }
+}
+
+#logo {
+  grid-area: logo;
+}
+
+#search {
+  grid-area: search;
+}
+
+#actions {
+  grid-area: actions;
+}

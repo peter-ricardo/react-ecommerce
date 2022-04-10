@@ -1,0 +1,46 @@
+#productInfo {
+  display: grid;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+
+  @screen lg {
+    grid-template-areas:
+      'shippingPriceBox1 productContent productContent'
+      'shippingPriceBox2 productContent productContent'
+      'shippingPriceBox3 productContent productContent' !important;
+  }
+
+  &.selectedPriceBox1 {
+    grid-template-areas:
+      'shippingPriceBox1'
+      'productContent'
+      'shippingPriceBox2'
+      'shippingPriceBox3';
+  }
+
+  &.selectedPriceBox2 {
+    grid-template-areas:
+      'shippingPriceBox1'
+      'shippingPriceBox2'
+      'productContent'
+      'shippingPriceBox3';
+  }
+
+  &.selectedPriceBox3 {
+    grid-template-areas:
+      'shippingPriceBox1'
+      'shippingPriceBox2'
+      'shippingPriceBox3'
+      'productContent';
+  }
+
+  @for $i from 1 through 3 {
+    #shippingPriceBox#{$i} {
+      grid-area: shippingPriceBox#{$i};
+    }
+  }
+
+  #productContent {
+    grid-area: productContent;
+  }
+}

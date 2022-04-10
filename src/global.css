@@ -16,3 +16,19 @@ code {
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .title {
+    @apply text-4xl text-grey-normal text-left;
+  }
+  .subtitle {
+    @apply text-xl text-grey-normal text-left;
+  }
+  .description {
+    @apply text-base text-grey-normal text-left;
+  }
+  .breadcrumb {
+    @apply description text-sm hover:underline transition
+  }
+}
+
+

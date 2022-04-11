@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import shippingBox from '../../assets/icons/shippingBox.svg';
 import shippingExpedited from '../../assets/icons/shippingExpedited.svg';
 import shippingFree from '../../assets/icons/shippingFree.svg';
@@ -22,7 +22,7 @@ function ShippingSelector(): JSX.Element {
   return (
     <div>
       {shippingsInfo.map((shippingInfo) => (
-        <div className="flex pt-4 items-center">
+        <div className="flex pt-9 items-center">
           <div className="mr-4 w-10">
             <img src={shippingInfo.icon} alt="" />
           </div>

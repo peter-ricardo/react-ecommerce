@@ -77,9 +77,9 @@ function ProductDetail(): JSX.Element {
 
   return (
     <div className="container mx-auto">
-      <h1 className="title">{productInfo?.name}</h1>
+      <h1 className="title pb-2 lg:pb-0">{productInfo?.name}</h1>
       <Rating reviews={productInfo?.reviews} rating={productInfo?.rating} />
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         <div className="w-[420px]">Gallery</div>
         <div className="w-full">
           <div
@@ -96,43 +96,53 @@ function ProductDetail(): JSX.Element {
             />
             <div
               id="productContent"
-              className="p-5 border border-grey-light -ml-1"
+              className="lg:border border-grey-light -ml-1 pb-14 lg:pb-0"
               style={{ gridArea: 'productContent' }}
             >
-              <p className="description">
-                Seller:{' '}
-                <a
-                  href={sellerSelected?.path}
-                  className="text-blue-normal underline"
-                >
-                  {sellerSelected?.name}
-                </a>
-              </p>
-              <Rating isSmall rating={sellerSelected?.rating} />
-              <p className="description py-5">Brand: {sellerSelected?.brand}</p>
-              <ProductSizeSelector
-                sizes={sellerSelected?.productSizes || []}
-                sizeSelected={sizeSelected || null}
-                onSelectSize={onSizeProductSelect}
-              />
-              <div className="flex py-5">
-                <QuantitySelector
-                  value={quantitySelected}
-                  onQuantityChange={onQuantityChange}
+              <div className="p-5">
+                <p className="description">
+                  Seller:{' '}
+                  <a
+                    href={sellerSelected?.path}
+                    className="text-blue-normal underline"
+                  >
+                    {sellerSelected?.name}
+                  </a>
+                </p>
+                <Rating isSmall rating={sellerSelected?.rating} />
+                <p className="description py-5">
+                  Brand: {sellerSelected?.brand}
+                </p>
+                <ProductSizeSelector
+                  sizes={sellerSelected?.productSizes || []}
+                  sizeSelected={sizeSelected || null}
+                  onSelectSize={onSizeProductSelect}
                 />
-                <div className="ml-10">
-                  <ShippingAvailability />
+                <div className="flex py-5">
+                  <QuantitySelector
+                    value={quantitySelected}
+                    onQuantityChange={onQuantityChange}
+                  />
+                  <div className="ml-10">
+                    <ShippingAvailability />
+                  </div>
                 </div>
               </div>
+              <button
+                type="button"
+                className="btn-blue-normal block lg:hidden w-full"
+              >
+                <p className="text-white">Request for Quote</p>
+              </button>
             </div>
           </div>
-          <div className="flex w-full mt-5">
+          <div className="flex w-full mt-5 justify-center">
             <div>
               <button type="button" className="btn-blue-normal">
                 <p className="text-white">See more sellers</p>
               </button>
             </div>
-            <div className="flex flex-1 justify-end">
+            <div className="hidden lg:flex lg:flex-1 lg:justify-end">
               <button type="button" className="btn-blue-normal">
                 <p className="text-white">Add to Cart</p>
               </button>
@@ -143,12 +153,12 @@ function ProductDetail(): JSX.Element {
           </div>
         </div>
       </div>
-      <div className="flex mt-5">
-        <div className="flex-1 pr-28">
+      <div className="flex flex-col-reverse lg:flex-row mt-14">
+        <div className="flex-1 mt-14 lg:mt-0 lg:pr-28">
           <p className="subtitle">Description</p>
           <p className="description text-left">{productInfo?.description}</p>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 pt-5 lg:pt-0">
           <ShippingSelector />
         </div>
       </div>

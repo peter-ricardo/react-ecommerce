@@ -24,9 +24,10 @@ function ProductSellerSelector({
           style={{ gridArea: `shippingPriceBox${seller.id}` }}
           key={seller.id}
           type="button"
-          className={`flex py-5 px-4 ${
-            sellerSelected?.id === seller.id &&
-            'border border-grey-light border-r-white rounded border-r-4 z-10'
+          className={`flex py-5 px-4 border-grey-light z-10 rounded ${
+            sellerSelected?.id === seller.id
+              ? 'border-t lg:border lg:border-r-white lg:border-r-4 '
+              : 'border-t lg:border-t-0'
           }`}
           onClick={() => {
             onSelectSeller(seller);

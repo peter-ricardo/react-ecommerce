@@ -4,25 +4,15 @@ import logo from '../../assets/header/logo.png';
 import search from '../../assets/header/search.svg';
 import cart from '../../assets/header/cart.svg';
 import user from '../../assets/header/user.svg';
-import hamburgMenu from '../../assets/header/hamburg-menu.svg';
 
 import './styles.scss';
 import CategoryList from '../CategoryList';
+import SlideMenu from '../SlideMenu';
 
 function Header(): JSX.Element {
-  const [menuOpened, setMenuOpened] = useState(false);
-
-  const handleMenuOpened = (): void => {
-    setMenuOpened(!menuOpened);
-  };
-
   return (
     <>
-      <header
-        className={`z-50 w-full top-0 bg-grey-ligther ${
-          menuOpened ? 'menuOpened' : ''
-        }`}
-      >
+      <header className="z-50 w-full top-0 bg-grey-ligther">
         <nav
           id="header"
           className="flex items-center justify-between flex-wrap lg:px-0"
@@ -33,9 +23,9 @@ function Header(): JSX.Element {
           >
             <div id="logo" className="col-span-2 flex flex-row items-center">
               <div className="mr-4 md:hidden">
-                <button type="button" onClick={handleMenuOpened}>
-                  <img src={hamburgMenu} alt="Menu" className="max-w-none" />
-                </button>
+                <SlideMenu>
+                  <CategoryList />
+                </SlideMenu>
               </div>
               <Link
                 to="/"
@@ -70,7 +60,9 @@ function Header(): JSX.Element {
           </div>
         </nav>
       </header>
-      <CategoryList menuOpened={menuOpened} closeMenu={handleMenuOpened} />
+      <div className="hidden lg:block">
+        <CategoryList />
+      </div>
     </>
   );
 }

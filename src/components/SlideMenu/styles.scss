@@ -1,0 +1,21 @@
+.menu {
+  position: absolute;
+  width: 60vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  transition: 0.4s;
+  transform: translateX(-60vw);
+  z-index: 100;
+  &.active {
+    transform: translateX(0) !important;
+  }
+}
+
+.closeButton {
+  transition: 0.3s;
+  opacity: 0;
+  &.active {
+    opacity: 0.8 !important;
+  }
+}

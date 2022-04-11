@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Company",
+    "links": [
+      {
+        "name": "About Us",
+        "path": "/#"
+      },
+      {
+        "name": "Sell With Use",
+        "path": "/#"
+      },
+      {
+        "name": "Our Seller",
+        "path": "/#"
+      }
+    ]
+  },
+  {
+    "name": "Customer Service",
+    "links": [
+      {
+        "name": "Help and FAQs",
+        "path": "/#"
+      },
+      {
+        "name": "Exchange and Returs Policy",
+        "path": "/#"
+      },
+      {
+        "name": "Privacy Policy",
+        "path": "/#"
+      },
+      {
+        "name": "Terms and Conditions",
+        "path": "/#"
+      }
+    ]
+  },
+  {
+    "name": "Our Stores",
+    "links": [
+      {
+        "name": "Stores and Services",
+        "path": "/#"
+      },
+      {
+        "name": "Location and Hours",
+        "path": "/#"
+      },
+      {
+        "name": "Catalogs",
+        "path": "/#"
+      }
+    ]
+  }
+]

@@ -23,6 +23,9 @@ code {
   .subtitle {
     @apply text-xl text-grey-normal text-left;
   }
+  .subtitle-footer {
+    @apply text-lg text-white text-left;
+  }
   .description {
     @apply text-base text-grey-normal text-left;
   }

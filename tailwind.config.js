@@ -16,6 +16,7 @@ module.exports = {
         dark: '#404040',
         'border-light': '#AAAAAA',
         'border-normal': '#BBBBBB',
+        divisor: '#5B5B5B',
       },
       smoke: '#202020',
       blue: {

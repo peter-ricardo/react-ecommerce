@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import itemDecrease from '../../assets/icons/itemDecrease.svg';
 import itemIncrease from '../../assets/icons/itemIncrease.svg';
 
@@ -29,7 +29,7 @@ function QuantitySelector({ value, onQuantityChange }: IProps): JSX.Element {
         <input
           className="w-10 text-center text-grey-normal"
           value={value}
-          onChange={(event: any) => {
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
             const newQuantity = event.target.value.replace(/\D/g, '');
             onQuantityChange(+newQuantity);
           }}

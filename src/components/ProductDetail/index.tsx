@@ -25,7 +25,7 @@ function ProductDetail(): JSX.Element {
   const [gridTemplateAreasShippingBox, setGridTemplateAreasShippingBox] =
     useState('');
 
-  const generateGridAreas = (priceItem: any): void => {
+  const generateGridAreas = (priceItem: string | undefined): void => {
     // The current width of the viewport
     const width = window.innerWidth;
     // The width below which the mobile view should be rendered
@@ -81,6 +81,7 @@ function ProductDetail(): JSX.Element {
 
   useEffect(() => {
     generateGridAreas(sellerSelected?.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sellerSelected]);
 
   useEffect(() => {
@@ -94,6 +95,7 @@ function ProductDetail(): JSX.Element {
     }
     window.addEventListener('resize', updateSize);
     return () => window.removeEventListener('resize', updateSize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sellerSelected]);
 
   return (

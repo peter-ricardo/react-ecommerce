@@ -29,6 +29,15 @@ code {
   .breadcrumb {
     @apply description text-sm hover:underline transition
   }
+  .btn-base {
+    @apply rounded px-7 py-2 ml-2
+  }
+  .btn-blue-normal {
+    @apply btn-base bg-blue-normal
+  }
+  .btn-blue-dark {
+    @apply btn-base bg-blue-dark rounded
+  }
 }
 
 

@@ -1,0 +1,70 @@
+[
+  {
+    "sku": "123ab",
+    "name": "Dave's Killer Bread® Organic 21 Whole Grain Bread",
+    "slug": "daves-killer-bread-organic-21",
+    "images": ["daves-killer-bread-organic-21.jpg"],
+    "reviews": 5,
+    "rating": 3.5,
+    "description": "Ingredients: Water, Organic Whole Wheat Flour, Organic Cracked Whole Wheat, Organic Cane Sugar, Organic Grain and Seed Topping Mix (Organic Flax Seeds, Organic Sunflower Seeds, Organic Brown Sesame Seeds, Organic Triticale Flakes [Wheat], Organic Barley Flakes, Organic Oat Flakes, Organic Pumpkin Seeds, Organic Rye Flakes, Organic Black Sesame Seeds, Organic Millet, Organic Spelt Flakes [Wheat], Organic Yellow Cornmeal, Organic Kamut Khorasan Wheat Flakes, Organic Quinoa, Organic Poppy Seeds), Organic Wheat Gluten.",
+    "sellers": [
+      {
+        "id": "seller1",
+        "name": "Seller name",
+        "path": "/#",
+        "rating": 4,
+        "brand": "Dave Killer's Breads",
+        "productSizes": [
+          {
+            "id": "size-300gms",
+            "name": "300 gms"
+          },
+          {
+            "id": "size-500kg",
+            "name": "500 kg"
+          },
+          {
+            "id": "size-750kg",
+            "name": "750 gms"
+          }
+        ],
+        "productPrice": 5.99,
+        "shippingFee": 5
+      },
+      {
+        "id": "seller2",
+        "name": "Seller name 2",
+        "path": "/#",
+        "rating": 4,
+        "brand": "Dave Killer's Breads",
+        "productSizes": [
+          {
+            "id": "size-500kg",
+            "name": "500 kg"
+          },
+          {
+            "id": "size-750kg",
+            "name": "750 gms"
+          }
+        ],
+        "productPrice": 3.89,
+        "shippingFee": 8
+      },
+      {
+        "id": "seller3",
+        "name": "Seller name 3",
+        "path": "/#",
+        "rating": 5,
+        "brand": "Dave Killer's Breads",
+        "productSizes": [
+          {
+            "id": "size-500kg",
+            "name": "500 kg"
+          }
+        ],
+        "productPrice": 7.29,
+        "shippingFee": 0
+      }
+    ]
+  }
+]

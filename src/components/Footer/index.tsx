@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Children, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import menuService from '../../services/menu';
 import { IMenu } from '../../types/menu';
@@ -26,21 +26,25 @@ function Footer(): JSX.Element {
     <div className="bg-grey-dark pt-8">
       <div className="container mx-auto flex flex-col-reverse lg:flex-row pb-9 lg:pb-3">
         <div className="flex flex-col lg:flex-row flex-1 justify-between">
-          {footerMenuLinks?.map((menu) => {
-            return (
-              <div className="flex flex-col pt-8 lg:pt-0">
-                <p className="subtitle-footer font-bold">{menu.name}</p>
-                {menu.links.map((link) => (
-                  <Link
-                    to={link.path}
-                    className="subtitle-footer hover:underline"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            );
-          })}
+          {Children.toArray(
+            footerMenuLinks?.map((menu) => {
+              return (
+                <div className="flex flex-col pt-8 lg:pt-0">
+                  <p className="subtitle-footer font-bold">{menu.name}</p>
+                  {Children.toArray(
+                    menu.links.map((link) => (
+                      <Link
+                        to={link.path}
+                        className="subtitle-footer hover:underline"
+                      >
+                        {link.name}
+                      </Link>
+                    )),
+                  )}
+                </div>
+              );
+            }),
+          )}
         </div>
         <div className="flex flex-col items-start lg:justify-center pt-8 lg:pt-0 lg:ml-36 relative">
           <p className="description text-white">Subscribe Newsletter</p>

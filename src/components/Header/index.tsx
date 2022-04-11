@@ -22,7 +22,7 @@ function Header(): JSX.Element {
             className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 py-[21px] px-5"
           >
             <div id="logo" className="col-span-2 flex flex-row items-center">
-              <div className="mr-4 md:hidden">
+              <div className="mr-4 lg:hidden">
                 <SlideMenu>
                   <CategoryList />
                 </SlideMenu>

@@ -9,8 +9,8 @@ class ProductsDataService {
     return index < 0 ? null : productsJson[index];
   }
 
-  getAllProducts(): IProduct[] {
-    return productsJson;
+  getAllProducts(slug: string): IProduct[] {
+    return productsJson.filter((product) => product.slug !== slug);
   }
 }
 

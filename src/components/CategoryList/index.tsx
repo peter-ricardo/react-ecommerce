@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Children, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/reducers';
 import categoriesService from '../../services/categories';
@@ -42,9 +42,11 @@ function CategoryList({ menuOpened = true, closeMenu }: IProps): JSX.Element {
             <img src={close} alt="Close Button" />
           </button>
         )}
-        {categories.map((category: ICategory) => (
-          <CategoryListItem category={category} />
-        ))}
+        {Children.toArray(
+          categories.map((category: ICategory) => (
+            <CategoryListItem category={category} />
+          )),
+        )}
       </div>
     </div>
   );

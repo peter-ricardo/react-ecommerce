@@ -10,12 +10,15 @@ import ProductSizeSelector from '../ProductSizeSelector';
 import QuantitySelector from '../QuantitySelector';
 import ShippingAvailability from '../ShippingAvailability';
 import ShippingSelector from '../ShippingSelector';
+import ImageCarousel from '../ImageCarousel';
+import ProductsCarousel from '../ProductsCarousel';
 
 function ProductDetail(): JSX.Element {
   const [productInfo, setProductInfo] = useState<IProduct | null>(null);
   const [sellerSelected, setSellerSelected] = useState<ISeller | undefined>();
   const [sizeSelected, setSizeSelected] = useState<IProductSizes | undefined>();
   const [quantitySelected, setQuantitySelected] = useState(1);
+  const [productsRelated, setProductsRelated] = useState<IProduct[]>([]);
 
   const [gridTemplateAreasShippingBox, setGridTemplateAreasShippingBox] =
     useState('');
@@ -52,6 +55,13 @@ function ProductDetail(): JSX.Element {
     setSizeSelected(data?.sellers?.[0]?.productSizes?.[0]);
   };
 
+  const fetchProductsRelated = (): void => {
+    const data = productsService.getAllProducts(
+      'daves-killer-bread-organic-21',
+    );
+    setProductsRelated(data);
+  };
+
   const onSellerProductSelect = (seller: ISeller): void => {
     setSellerSelected(seller);
     setSizeSelected(seller?.productSizes?.[0]);
@@ -73,6 +83,7 @@ function ProductDetail(): JSX.Element {
 
   useEffect(() => {
     fetchProductData();
+    fetchProductsRelated();
   }, []);
 
   return (
@@ -80,7 +91,11 @@ function ProductDetail(): JSX.Element {
       <h1 className="title pb-2 lg:pb-0">{productInfo?.name}</h1>
       <Rating reviews={productInfo?.reviews} rating={productInfo?.rating} />
       <div className="flex flex-col lg:flex-row">
-        <div className="w-[420px]">Gallery</div>
+        <div className="w-full py-8 lg:py-0 lg:w-5/12 lg:mr-14 flex rounded justify-center items-center ">
+          <div className="w-full lg:w-[266px] h-[266px]">
+            <ImageCarousel images={productInfo?.images || []} />
+          </div>
+        </div>
         <div className="w-full">
           <div
             id="productInfo"
@@ -161,6 +176,10 @@ function ProductDetail(): JSX.Element {
         <div className="flex-1 pt-5 lg:pt-0">
           <ShippingSelector />
         </div>
+      </div>
+      <div className="my-12">
+        <p className="subtitle">Related Products</p>
+        <ProductsCarousel products={productsRelated} />
       </div>
     </div>
   );

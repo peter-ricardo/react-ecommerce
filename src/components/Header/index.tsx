@@ -29,7 +29,7 @@ function Header(): JSX.Element {
         >
           <div
             id="menu"
-            className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 py-[21px] px-5"
+            className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 py-[21px] px-5"
           >
             <div id="logo" className="col-span-2 flex flex-row items-center">
               <div className="mr-4 md:hidden">
@@ -56,7 +56,7 @@ function Header(): JSX.Element {
             </div>
             <div
               id="actions"
-              className="w-full flex pt-4 md:pt-0 justify-center md:justify-end lg:w-auto"
+              className="w-full flex pt-4 md:pt-0 justify-center sm:justify-end lg:w-auto"
             >
               <div>
                 <button type="button" className="mr-7">

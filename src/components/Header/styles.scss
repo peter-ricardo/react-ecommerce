@@ -2,8 +2,12 @@
 
   grid-template-areas: "logo" "actions" "search";
 
-  @screen md {
+  @screen sm {
     grid-template-areas: "logo actions" "search search";
+  }
+
+  @screen md {
+    grid-template-areas: "logo logo actions actions" "search search search search";
   }
 
   @screen lg {

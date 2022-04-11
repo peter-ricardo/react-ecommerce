@@ -34,7 +34,7 @@ function ImageCarousel({ images = [] }: IProps): JSX.Element {
       {Children.toArray(
         images?.map((image) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide className="flex justify-center lg:block">
               <img
                 src={`${IMAGE_BASE_PATH}/${image}`}
                 alt=""

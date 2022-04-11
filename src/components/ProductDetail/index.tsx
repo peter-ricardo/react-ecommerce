@@ -1,5 +1,7 @@
 /* eslint-disable no-restricted-syntax */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
+
 import Rating from '../Rating';
 import productsService from '../../services/products';
 
@@ -86,8 +88,19 @@ function ProductDetail(): JSX.Element {
     fetchProductsRelated();
   }, []);
 
+  useLayoutEffect(() => {
+    function updateSize(): void {
+      generateGridAreas(sellerSelected?.id);
+    }
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, [sellerSelected]);
+
   return (
     <div className="container mx-auto">
+      <Helmet>
+        <title>{productInfo?.name || 'Product Detail'}</title>
+      </Helmet>
       <h1 className="title pb-2 lg:pb-0">{productInfo?.name}</h1>
       <Rating reviews={productInfo?.reviews} rating={productInfo?.rating} />
       <div className="flex flex-col lg:flex-row">
